@@ -9,7 +9,7 @@ import {
   StyleSheet, Email
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
-import Eye from "../assets/icons/Eye";
+{/* import Eye from "../assets/icons/Eye"; */}
 
 
 function Loginpg({ navigation }) {
@@ -27,7 +27,7 @@ const handlePasswordChange = (value) => {
     auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        navigation.navigate('Budgetpg'); // 로그인 후 Budgetpg로 이동
+        navigation.navigate('SuccessLogin'); // 로그인 후 SuccessLogin으로 이동
       })
       .catch((error) => {
         setValidation('일치하는 이메일 혹은 비밀번호가 없습니다.');
@@ -109,13 +109,13 @@ const [eye, setEye] = useState({
     if (eye[buttonName]) {
       switch (buttonName) {
         case 'eyeOpen':
-          return require('../assets/icons/Eye');
+          return require('../assets/icons/eyeOn.png');
         default:
-          return require('../assets/icons/Eye');
+          return require('../assets/icons/eye.png');
       }
     } 
     else{
-      return require('../assets/icons/Eye');
+      return require('../assets/icons/eye.png');
     }
   };
 
